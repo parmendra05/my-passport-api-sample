@@ -34,5 +34,10 @@ public class PassportExceptionHandler {
 	public ResponseEntity<Object> duplicateDataFoundExceptionHandler(DuplicateDataFound ex) {
 		return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
 	}
+	
+	@ExceptionHandler
+	public ResponseEntity<Object> adhaarVerificationFailedExceptionHandler(AdhaarVerificationFailedException ex) {
+		return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+	}
 
 }
